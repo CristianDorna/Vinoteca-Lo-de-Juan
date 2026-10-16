@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#351013">
+    <meta name="description" content="Descubrí vinos, cervezas, aperitivos y bebidas en Vinoteca Lo de Juan. Consultanos por WhatsApp.">
+    <title>Vinoteca Lo de Juan | Buenos momentos, buenos vinos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Vinoteca Lo de Juan, inicio">
+            <img src="img/logo-lo-de-juan.jpeg" alt="Logo de Vinoteca Lo de Juan">
+            <span>Lo de <strong>Juan</strong></span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <a class="header-whatsapp" href="https://wa.me/5491136121215" target="_blank" rel="noopener noreferrer">
+            <span aria-hidden="true">↗</span> Hablemos
+        </a>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-copy">
+                <p class="eyebrow"><span></span> VINOTECA · SELECCIÓN PARA COMPARTIR</p>
+                <h1>Un buen momento<br>siempre <em>se descorcha.</em></h1>
+                <p class="hero-description">Vinos, aperitivos y algo rico para cada encuentro. Encontrá tu próximo favorito y consultanos por WhatsApp.</p>
+                <a class="button button-gold" href="#catalogo">Explorar el catálogo <span aria-hidden="true">↓</span></a>
+                <div class="hero-note"><span aria-hidden="true">✳</span> Elegí tu producto. Juan te ayuda con el resto.</div>
+            </div>
+            <div class="hero-art" aria-label="Logo de Vinoteca Lo de Juan">
+                <div class="hero-art-glow"></div>
+                <img src="img/logo-lo-de-juan.jpeg" alt="" fetchpriority="high">
+                <span class="hero-stamp">PARA<br>DISFRUTAR<br><b>JUNTOS</b></span>
+            </div>
+            <div class="hero-bottom"><span>BUENAS ELECCIONES, MEJORES ENCUENTROS</span><span>DESDE LO DE JUAN · CON CARIÑO</span></div>
+        </section>
+
+        <section class="catalog-section" id="catalogo">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow eyebrow-dark"><span></span> ENCONTRÁ EL INDICADO</p>
+                    <h2>La selección <em>de Juan</em></h2>
+                </div>
+                <p class="section-intro">Cada ocasión tiene su etiqueta.<br>¿Cuál va con la tuya?</p>
+            </div>
+
+            <div class="catalog-tools">
+                <div class="filter-list" id="filters" role="group" aria-label="Filtrar productos por categoría"></div>
+                <label class="search-box">
+                    <span aria-hidden="true">⌕</span>
+                    <span class="visually-hidden">Buscar en el catálogo</span>
+                    <input id="product-search" type="search" placeholder="Buscar un producto..." autocomplete="off">
+                    <kbd>/</kbd>
+                </label>
+            </div>
+
+            <div class="catalog-summary">
+                <p id="results-count" aria-live="polite"></p>
+                <span>CONSULTÁ DISPONIBILIDAD POR WHATSAPP</span>
+            </div>
+            <div class="product-grid" id="product-grid"></div>
+            <div class="empty-state" id="empty-state" hidden>
+                <span aria-hidden="true">⌕</span>
+                <h3>No encontramos ese producto</h3>
+                <p>Probá con otra búsqueda o elegí una categoría diferente.</p>
+            </div>
+        </section>
+
+        <section class="contact-banner" id="contacto">
+            <div class="contact-mark" aria-hidden="true">J.</div>
+            <div>
+                <p class="eyebrow"><span></span> ESTAMOS A UN MENSAJE</p>
+                <h2>¿Brindamos por algo?</h2>
+                <p>Escribinos y te ayudamos a elegir. Consultá precios, disponibilidad y recomendaciones.</p>
+            </div>
+            <a class="button button-light" href="https://wa.me/5491136121215?text=Hola%20Juan%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.8-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.2-.5-.1-.5-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4S5.7 7.5 5.7 9s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.5Z"/></svg>
+                Escribir por WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <a class="footer-brand" href="#inicio"><img src="img/logo-lo-de-juan.jpeg" alt=""><span>Vinoteca <strong>Lo de Juan</strong></span></a>
+        <p>Buenos momentos, buenos vinos. <span>© 2026 Lo de Juan</span></p>
+        <a href="https://wa.me/5491136121215" target="_blank" rel="noopener noreferrer">1136121215 <span aria-hidden="true">↗</span></a>
+    </footer>
+
+    <a class="floating-whatsapp" href="https://wa.me/5491136121215?text=Hola%20Juan%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener noreferrer" aria-label="Contactar a Lo de Juan por WhatsApp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.8-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.3.2-.6.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6.2-.5-.1-.5-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.5.1-.8.4S5.7 7.5 5.7 9s1.1 3 1.3 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.1-1.4-.1-.2-.3-.3-.6-.5Z"/></svg>
+    </a>
+    <script src="js/script.js"></script>
+</body>
+</html>
