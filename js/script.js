@@ -244,7 +244,7 @@ function createCard(product) {
 
     const link = document.createElement("a");
     link.className = "product-whatsapp";
-    const message = `Hola Vinoteca Lo DeJuan, quiero consultar por ${product.title}. ¿Tenés disponibilidad y cuál es su precio?`;
+    const message = `Hola Vinoteca Lo De Juan, quiero consultar por ${product.title}. ¿Tenés disponibilidad y cuál es su precio?`;
     link.href = `https://wa.me/5491136121215?text=${encodeURIComponent(message)}`;
     link.target = "_blank";
     link.rel = "noopener noreferrer";

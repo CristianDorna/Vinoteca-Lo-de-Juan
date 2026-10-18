@@ -106,6 +106,8 @@ h1, h2, h3, p { margin-top: 0; }
 .site-footer { min-height: 80px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px max(7vw, 24px); border-top: 1px solid var(--line); }
 .footer-brand { gap: 8px; font-size: 14px; }
 .footer-brand img { width: 29px; height: 29px; object-fit: cover; border-radius: 50%; }
+.footer-brand2 { gap: 8px; font-size: 14px; }
+.footer-brand2 img { width: 100px; height: 100px; object-fit: cover; border-radius: 50%; }
 .site-footer > p { margin: 0; color: var(--muted); font-size: 9px; }
 .site-footer > p span { margin-left: 12px; color: #aaa199; }
 .site-footer > a:last-child { color: var(--wine); font-size: 10px; }
