@@ -190,6 +190,10 @@ const filters = document.querySelector("#filters");
 const searchInput = document.querySelector("#product-search");
 const countLabel = document.querySelector("#results-count");
 const emptyState = document.querySelector("#empty-state");
+const installButton = document.querySelector("#install-app");
+const installHelp = document.querySelector("#install-help");
+const installHelpInstructions = document.querySelector("#install-help-instructions");
+let deferredInstallPrompt;
 let activeCategory = "todos";
 
 function normalize(value) {
@@ -280,6 +284,55 @@ document.addEventListener("keydown", (event) => {
         searchInput.blur();
     }
 });
+
+function showInstallHelp() {
+    const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    installHelpInstructions.textContent = isAppleMobile
+        ? "En Safari, tocá el botón Compartir y elegí “Agregar a pantalla de inicio”."
+        : "En Chrome o Edge, abrí el menú del navegador y elegí “Instalar Lo de Juan” o “Agregar a la pantalla de inicio”.";
+    installHelp.showModal();
+}
+
+installButton.addEventListener("click", async () => {
+    if (!deferredInstallPrompt) {
+        showInstallHelp();
+        return;
+    }
+
+    try {
+        await deferredInstallPrompt.prompt();
+        const choice = await deferredInstallPrompt.userChoice;
+        deferredInstallPrompt = null;
+        if (choice.outcome === "accepted") installButton.hidden = true;
+    } catch (error) {
+        console.error("No se pudo iniciar la instalación de la app.", error);
+        showInstallHelp();
+    }
+});
+
+document.querySelector("#install-help-close").addEventListener("click", () => installHelp.close());
+
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredInstallPrompt = event;
+});
+
+window.addEventListener("appinstalled", () => {
+    installButton.hidden = true;
+    deferredInstallPrompt = null;
+});
+
+if (window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true) {
+    installButton.hidden = true;
+}
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js").catch((error) => {
+            console.error("No se pudo registrar el funcionamiento sin conexión.", error);
+        });
+    });
+}
 
 renderFilters();
 renderProducts();

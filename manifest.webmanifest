@@ -1,0 +1,20 @@
+{
+    "id": "./",
+    "name": "Vinoteca Lo de Juan",
+    "short_name": "Lo de Juan",
+    "description": "Vinos, aperitivos y bebidas para compartir. Consultá por WhatsApp.",
+    "lang": "es-AR",
+    "start_url": "./",
+    "scope": "./",
+    "display": "standalone",
+    "background_color": "#f6f2eb",
+    "theme_color": "#351013",
+    "icons": [
+        {
+            "src": "img/app-icon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}
