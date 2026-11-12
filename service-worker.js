@@ -1,4 +1,4 @@
-const CACHE_NAME = "lo-de-juan-v1";
+const CACHE_NAME = "lo-de-juan-v2";
 const APP_SHELL = [
     "./",
     "./index.html",
@@ -39,6 +39,23 @@ self.addEventListener("fetch", (event) => {
     if (request.mode === "navigate") {
         event.respondWith(
             fetch(request).catch(() => caches.match("./index.html"))
+        );
+        return;
+    }
+
+    if (request.destination === "style" || request.destination === "script") {
+        const networkResponse = fetch(request, { cache: "no-cache" });
+        event.respondWith(
+            networkResponse.then((response) => {
+                if (response.ok) {
+                    const responseToCache = response.clone();
+                    event.waitUntil(
+                        caches.open(CACHE_NAME)
+                            .then((cache) => cache.put(request, responseToCache))
+                    );
+                }
+                return response;
+            }, () => caches.match(request))
         );
         return;
     }
