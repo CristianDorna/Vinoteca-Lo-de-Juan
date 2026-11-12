@@ -190,6 +190,8 @@ const filters = document.querySelector("#filters");
 const searchInput = document.querySelector("#product-search");
 const countLabel = document.querySelector("#results-count");
 const emptyState = document.querySelector("#empty-state");
+const footer = document.querySelector(".site-footer");
+const floatingWhatsapp = document.querySelector(".floating-whatsapp");
 const installButton = document.querySelector("#install-app");
 const installHelp = document.querySelector("#install-help");
 const installHelpInstructions = document.querySelector("#install-help-instructions");
@@ -311,6 +313,22 @@ installButton.addEventListener("click", async () => {
 });
 
 document.querySelector("#install-help-close").addEventListener("click", () => installHelp.close());
+
+let footerClearanceUpdateScheduled = false;
+function scheduleFooterClearanceUpdate() {
+    if (footerClearanceUpdateScheduled) return;
+    footerClearanceUpdateScheduled = true;
+    window.requestAnimationFrame(() => {
+        const footerTop = footer.getBoundingClientRect().top;
+        const clearance = Math.max(0, window.innerHeight - footerTop);
+        floatingWhatsapp.style.setProperty("--footer-clearance", `${clearance}px`);
+        footerClearanceUpdateScheduled = false;
+    });
+}
+
+window.addEventListener("scroll", scheduleFooterClearanceUpdate, { passive: true });
+window.addEventListener("resize", scheduleFooterClearanceUpdate);
+scheduleFooterClearanceUpdate();
 
 window.addEventListener("beforeinstallprompt", (event) => {
     event.preventDefault();
