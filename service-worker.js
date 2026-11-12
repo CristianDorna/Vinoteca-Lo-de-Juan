@@ -1,4 +1,4 @@
-const CACHE_NAME = "lo-de-juan-v2";
+const CACHE_NAME = "lo-de-juan-v3";
 const APP_SHELL = [
     "./",
     "./index.html",
@@ -6,6 +6,8 @@ const APP_SHELL = [
     "./js/script.js",
     "./manifest.webmanifest",
     "./img/logo-lo-de-juan.jpeg",
+    "./img/logo-lo-de-juan-192.png",
+    "./img/logo-lo-de-juan-512.png",
     "./img/app-icon.svg"
 ];
 const CACHEABLE_DESTINATIONS = new Set(["image", "style", "script", "font"]);

@@ -11,9 +11,15 @@
     "theme_color": "#351013",
     "icons": [
         {
-            "src": "img/app-icon.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
+            "src": "img/logo-lo-de-juan-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "img/logo-lo-de-juan-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
             "purpose": "any"
         }
     ]
